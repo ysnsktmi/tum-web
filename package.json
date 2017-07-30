@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "yarn run sass-b & yarn run browserify",
     "eslint": "esw -w ./dev/js/**/**.js --cache=true",
     "eslint--nocache": "esw -w ./dev/js/**/**.js",
-    "watchify": "watchify -t babelify ./dev/js/index.js -o ./bones-master/library/js/tum-script",
-    "browserify": "set NODE_ENV=production && browserify ./dev/js/index.js -t babelify -t envify | uglifyjs -c warnings=false > ./bones-master/library/js/tum-script",
+    "watchify": "watchify -t babelify ./dev/js/index.js -o ./bones-master/library/js/tum-script.js",
+    "browserify": "set NODE_ENV=production && browserify ./dev/js/index.js -t babelify -t envify | uglifyjs -c warnings=false > ./bones-master/library/js/tum-script.js",
     "sass": "node-sass -w ./dev/styles/style.scss ./bones-master/library/css/tum-style.css --output-style=expanded",
+    "sass-b": "node-sass ./dev/styles/style.scss ./bones-master/library/css/tum-style.css --output-style=expanded",
     "serve": "browser-sync start --server --files ./dev/**.html, ./dev/**.css, ./dev/**.js",
     "watch": "yarn run sass | yarn watchify"
   },

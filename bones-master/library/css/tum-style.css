@@ -1,0 +1,334 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Lato', 'Myriad Set Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+a[href],
+a:visited {
+  color: #aaa;
+  text-decoration: none;
+}
+
+button {
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  height: 60px;
+  padding: 12px;
+  line-height: 1;
+  vertical-align: baseline;
+  background: none transparent;
+  color: #aaa;
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.transition, #menu-global, #touch-blocker {
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+.header {
+  position: relative;
+}
+
+.header .h1 {
+  text-align: center;
+  line-height: 1;
+  font-size: 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header #nav-trigger-global {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+.header #nav-trigger-global i {
+  font-size: 2rem;
+}
+
+#menu-global {
+  position: fixed;
+  background-color: #222;
+  height: 100%;
+  top: 0;
+  left: -1000%;
+  width: 80%;
+  z-index: 101;
+}
+
+#menu-global.active {
+  left: 0;
+}
+
+#menu-global li {
+  font-size: 1.2rem;
+  border-bottom: solid 1px #555555;
+  display: block;
+  width: 100%;
+}
+
+#menu-global li.banner {
+  border: none;
+}
+
+#menu-global li.sns {
+  border: none;
+  width: auto;
+  display: inline-block;
+}
+
+#menu-global li a {
+  display: block;
+  padding: 12px;
+}
+
+#touch-blocker {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.post {
+  background-color: #222;
+  border-bottom: solid 1px #555555;
+  padding: 10px;
+}
+
+.post .entry-title {
+  font-size: 1.4rem;
+}
+
+.post .entry-meta {
+  font-size: .7rem;
+}
+
+.post .entry-content p {
+  padding: 10px 0 0;
+  font-weight: 100;
+}
+
+.post .twitter-share {
+  display: none;
+}
+
+.post .article-footer {
+  display: none;
+}
+
+.sidebar {
+  display: none;
+}
+
+footer {
+  background-color: #222;
+}
+
+.footer-links {
+  padding: 20px 0;
+}
+
+.footer-links .footer-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-links .footer-nav li a {
+  font-size: 1.6rem;
+  padding: 20px;
+}
+
+.copyright {
+  padding: 20px;
+  background-color: #fff;
+  color: #222;
+  text-align: center;
+}
+
+/*********************
+ICONS
+**********************/
+.fa.fa-twitter, .fa.fa-twitter-square {
+  color: #1da1f2;
+}
+
+.fa.fa-instagram {
+  color: #5851db;
+}
+
+.fa.fa-facebook, .fa.fa-facebook-f, .fa.fa-facebook-official, .fa.fa-facebook-square {
+  color: #3b5998;
+}
+
+.fa.fa-youtube, .fa.fa-youtube-play, .fa.fa-youtube-square {
+  color: #cd201f;
+}
+
+/*********************
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*********************/
+@media only screen and (min-width: 481px) {
+  #menu-global {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #menu-global li {
+    padding: 20px;
+    border-bottom: none;
+    text-align: center;
+  }
+  #menu-global li.current-menu-item:after {
+    display: block;
+    content: "";
+    border-top: solid 1px #555555;
+  }
+  #menu-global li.banner, #menu-global li.sns {
+    display: none;
+  }
+  #nav-trigger-global {
+    display: none;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  main #cover {
+    width: 100%;
+  }
+  main .post {
+    width: 49%;
+  }
+}
+
+/*********************
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 768px) {
+  #inner-content {
+    display: flex;
+  }
+  #inner-content .sidebar {
+    display: block;
+    margin-left: 10px;
+    width: 25rem;
+  }
+  #inner-content .sidebar .widget {
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: solid 1px #555555;
+  }
+  #inner-content .sidebar .widget:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border: none;
+  }
+  .footer-links .footer-nav {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/*********************
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+/*********************
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*********************/
+/*********************
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*********************/

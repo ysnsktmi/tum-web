@@ -1,0 +1,53 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "mocha": true
+    },
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true,
+            "impliedStrict": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2,
+            {"SwitchCase": 1}
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "strict": [0, "global"],
+        "no-bitwise": 0,
+        "no-multi-spaces": 0,
+        "operator-assignment": 0,
+        "no-multiple-empty-lines": [2, {"max": 3}],
+        "prefer-template": 0,
+        "arrow-body-style": [0, "always"],
+        "key-spacing": 0,
+        "no-underscore-dangle": 0,
+        "react/jsx-filename-extension": 0,
+        "react/prop-types": 0,
+        "react/jsx-closing-bracket-location": 0,
+        "jsx-a11y/interactive-supports-focus": 0,
+        "class-methods-use-this": 0
+    }
+}
