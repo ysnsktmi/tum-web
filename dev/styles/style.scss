@@ -1,0 +1,325 @@
+@charset "UTF-8";
+
+@import "reset";
+
+$link: #aaa;
+$bg: #222;
+$gr: lighten($bg, 20%);
+$wh: #fff;
+
+$bdval: solid 1px $gr;
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Lato', 'Myriad Set Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+body {
+  background-color: $bg;
+  color: $wh;
+}
+a[href],
+a:visited {
+  color: $link;
+  text-decoration: none;
+}
+button {
+  border: solid 1px $link;
+  border-radius: 3px;
+  height: 60px;
+  padding: 12px;
+  line-height: 1;
+  vertical-align: baseline;
+  background: none transparent;
+  color: $link;
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.transition{
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+.header {
+  position: relative;
+  // height: 45px;
+  .h1 {
+    text-align: center;
+    line-height: 1;
+    font-size: 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #nav-trigger-global {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    i {
+      font-size: 2rem;
+    }
+  }
+}
+
+
+#menu-global {
+  @extend .transition;
+  position: fixed;
+  background-color: $bg;
+  height: 100%;
+  top: 0;
+  left: -1000%;
+  width: 80%;
+  z-index: 101;
+  &.active {
+    left: 0;
+  }
+  li {
+    font-size: 1.2rem;
+    border-bottom: $bdval;
+    display: block;
+    width: 100%;
+    &.banner {
+      border: none;
+    }
+    &.sns {
+      border: none;
+      width: auto;
+      display: inline-block;
+    }
+    a {
+      display: block;
+      padding: 12px;
+    }
+  }
+}
+
+#touch-blocker {
+  @extend .transition;
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 100;
+}
+
+.post {
+  background-color: $bg;
+  border-bottom: $bdval;
+  padding: 10px;
+  .entry-title {
+    font-size: 1.4rem;
+  }
+  .entry-meta {
+    font-size: .7rem;
+  }
+  .entry-content {
+    p {
+      padding: 10px 0 0;
+      font-weight: 100;
+    }
+  }
+  .twitter-share {
+    display: none;
+  }
+  .article-footer {
+    display: none;
+  }
+}
+
+.sidebar {
+  display: none;
+}
+footer{
+  background-color: $bg;
+}
+.footer-links {
+  padding: 20px 0;
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+    li {
+      a {
+        font-size: 1.6rem;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.copyright {
+  padding: 20px;
+  background-color: $wh;
+  color: $bg;
+  text-align: center;
+}
+
+/*********************
+ICONS
+**********************/
+$tw: #1da1f2;  // twitter
+$ig: #5851db;  // instagram
+$fb: #3b5998;  // facebook
+$fbm: #0084ff; // fb messenger
+$yt: #cd201f;  // youtube
+$am: #ff9900;  // amazon
+$amm: #146eb4; // amazon music
+$gg: #4285f4;  // google
+$ggp: #dd4b39; // google+
+$ios: #5fc9f8; // ios
+$adr: #a4c639; // andoroid
+$ln: #00c300;  // line
+$mc: #52aad8;  // mixcloud
+$pt: #bd081c;  // pinterest
+$skp: #00aff0; // skype
+$spf: #1db954; // spotify
+$tbl: #35465c; // tumblr
+
+.fa {
+  &.fa- {
+    &twitter,
+    &twitter-square {
+      color: $tw;
+    }
+    &instagram {
+      color: $ig;
+    }
+    &facebook,
+    &facebook-f,
+    &facebook-official,
+    &facebook-square {
+      color: $fb;
+    }
+    &youtube,
+    &youtube-play,
+    &youtube-square {
+      color: $yt;
+    }
+  }
+}
+
+
+
+
+/*********************
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*********************/
+@media only screen and (min-width: 481px) {
+#menu-global {
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  li {
+    padding: 20px;
+    border-bottom: none;
+    text-align: center;
+    &.current-menu-item {
+      &:after {
+        display: block;
+        content: "";
+        border-top: $bdval;
+      }
+    }
+    &.banner,
+    &.sns {
+      display: none;
+    }
+  }
+}
+#nav-trigger-global {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  #cover {
+    width: 100%;
+  }
+  .post {
+    width: 49%;
+    &:nth-child(1n) {
+
+    }
+  }
+}
+
+}
+/*********************
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 768px) {
+#inner-content{
+  display: flex;
+  main {
+
+  }
+  .sidebar {
+    display: block;
+    margin-left: 10px;
+    width: 25rem;
+    .widget{
+      margin-top: 10px;
+      padding: 10px 0;
+      border-top: $bdval;
+      &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border: none;
+      }
+    }
+  }
+}
+.footer-links {
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+  }
+}
+}
+/*********************
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 1030px) {
+}
+/*********************
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*********************/
+@media only screen and (min-width: 1240px) {
+
+}
+/*********************
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*********************/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+}

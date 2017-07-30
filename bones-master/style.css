@@ -1,0 +1,307 @@
+/******************************************************************
+Theme Name: Bones (Rename Me!)
+Theme URI: http://www.themble.com/bones
+Description: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href="https://github.com/eddiemachado/bones/issues" title="Bones Issues">Bones Issues</a> page on Github. You'll want to customize this for your clients with your own information.
+Author: Your Name Here
+Author URI: http://www.yoururlhere.com
+Version: 1.7
+Tags: fluid-layout, responsive-layout, accessibility-ready, translation-ready, microformats, rtl-language-support
+
+License: WTFPL
+License URI: http://sam.zoy.org/wtfpl/
+Are You Serious? Yes.
+
+
+MAKE SURE TO READ BELOW BEFORE GETTING STARTED FOR THE FIRST TIME!
+------------------------------------------------------------------
+
+You may be thinking…
+
+WHOA, WHOA, WHOA…WHAT HAPPENED HERE?
+
+But before you freak out, let me take a few minutes to explain.
+
+Bones now uses Sass by default. If you prefer using regular CSS,
+then feel free to modify this theme how you like and keep a copy
+as your own personal starting point.
+
+DON'T DISMISS IT JUST YET THOUGH, USING Sass ISN'T AS COMPLICATED AS YOU THINK.
+
+It does take a few minutes to wrap your head around, but it will all
+be worth it. Need a quick intro? Here are a few quick reads:
+
+http://simplebits.com/notebook/2013/11/13/sass-book/ (BUY THIS)
+http://cognition.happycog.com/article/preprocess-this
+http://viget.com/inspire/sass-a-designers-perspective
+http://ianstormtaylor.com/oocss-plus-sass-is-the-best-way-to-css/
+http://css-tricks.com/sass-style-guide/
+http://net.tutsplus.com/tutorials/html-css-techniques/developing-with-sass-and-chrome-devtools/
+
+I would HIGHLY RECOMMEND, if you are going to be working with Sass, that you work locally.
+The browsers don't understand Sass and compiling it on the server takes a bit
+of a setup.
+
+That being said, here are a few MUST HAVE TOOLS for working with a
+pre-processor: (You really only need one of them)
+
+CodeKit: (Highly Recommended)
+http://incident57.com/codekit/
+
+Compass App: (Windows / Mac Users)
+http://compass.handlino.com/
+
+These applications compile Sass into valid CSS. This
+way you can keep your production files easy to read and your
+CSS minified and speedy. Simply set the output to the
+library/css folder and you are all set. It's a thing of beauty.
+
+You can also setup auto compiling with Grunt or using Terminal on
+OSX. It's a bit complicated to setup so if you aren't familiar
+with it, just get one of the automated applications.
+
+---------------------------------------------------------------
+
+Remember, once you download Bones it's up to you how to use it,
+so go nuts. Set things up and develop in a way that's easiest for
+you. If using Sass is still a bit confusing for you, then remove it
+and customize this template as you see fit.
+
+If you're a bit uneasy about using Sass or just want a familiar setup,
+take a few minutes and think about how much better a developer you
+can become by just TRYING out new technologies. It may be tough at
+first but it WILL make you a better developer. TRUST ME ON THIS. Give
+it a week, maybe two, and you will never go back.
+
+If you STILL can't get on board and want to jump ship, that's cool.
+Bones is not for everyone and that's ok, I mean I'm not hurt by it,
+whatever, I never liked you anyway. Here are some other alternatives
+if you're looking for a blank starter theme. I'll just be here waiting
+by the window, in case you ever decide to come back.
+
+http://roots.io/starter-theme (way more complex but has a ton of cool features)
+http://html5reset.org (super clean and great markup)
+https://github.com/viewportindustries/starkers (not sure if it's still active, but still good)
+
+That's it. It's time to jump in and get your hands dirty.
+Seriously, why are you still reading this? Get to work!
+If you have any issues or problems, you can create an issue on github
+or find me on Twitter: @eddiemachado (SHAMELESS PLUG!).
+
+Happy Developing!
+
+(When you're done, you may want to remove all this nonsense before
+passing it along to your client.)
+
+******************************************************************/
+
+/*
+WordPress Probz
+So Theme Check (http://wordpress.org/plugins/theme-check/)
+is constantly telling me that it needs these classes in the CSS even
+though they are in the REAL stylesheet in library/css/style.css.
+So we're gonna drop these here to keep it happy.
+Great work, Theme Check (eye roll)
+*/
+
+.sticky {}          /* DO NOT EDIT THIS */
+.gallery-caption {} /* THESE ARE USELESS */
+.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-family: 'Lato', 'Myriad Set Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px; }
+
+body {
+  background-color: #222;
+  color: #fff; }
+
+a[href],
+a:visited {
+  color: #aaa;
+  text-decoration: none; }
+
+button {
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  height: 44px;
+  padding: 12px;
+  line-height: 1;
+  vertical-align: baseline;
+  background: none transparent;
+  color: #aaa; }
+
+.icon {
+  font-size: 1rem; }
+
+.transition, #menu-global, #touch-blocker {
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out; }
+
+.header {
+  position: relative;
+  height: 45px; }
+  .header .h1 {
+    text-align: center;
+    line-height: 1;
+    font-size: 1.5rem;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .header #nav-trigger-global {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none; }
+
+#menu-global {
+  position: fixed;
+  background-color: #222;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  z-index: 101; }
+  #menu-global.active {
+    left: 0; }
+  #menu-global li {
+    padding: 12px;
+    font-size: 1.2rem; }
+
+#touch-blocker {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100; }
+
+.post {
+  margin-top: 5px;
+  border-bottom: solid 1px #555555;
+  padding: 5px 10px 10px; }
+  .post .entry-title {
+    font-size: 1.4rem; }
+  .post .entry-meta {
+    font-size: .7rem; }
+  .post .entry-content p {
+    padding: 10px 0 0;
+    font-weight: 100; }
+  .post .twitter-share {
+    display: none; }
+  .post .article-footer {
+    display: none; }
+
+.sidebar {
+  display: none; }
+
+.footer {
+  padding: 20px;
+  background-color: #fff;
+  color: #222;
+  text-align: center; }
+
+/*********************
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*********************/
+@media only screen and (min-width: 481px) {
+  #menu-global {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    #menu-global li {
+      padding: 20px; }
+      #menu-global li.banner {
+        display: none; }
+  #nav-trigger-global {
+    display: none; }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    main #cover {
+      width: 100%; }
+    main .post {
+      width: 49%; } }
+
+/*********************
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+/*********************
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+/*********************
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*********************/
+/*********************
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*********************/
+
+

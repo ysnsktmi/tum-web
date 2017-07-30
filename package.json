@@ -1,0 +1,32 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "eslint": "esw -w ./dev/js/**/**.js --cache=true",
+    "eslint--nocache": "esw -w ./dev/js/**/**.js",
+    "watchify": "watchify -t babelify ./dev/js/index.js -o ./bones-master/library/js/tum-script",
+    "browserify": "set NODE_ENV=production && browserify ./dev/js/index.js -t babelify -t envify | uglifyjs -c warnings=false > ./bones-master/library/js/tum-script",
+    "sass": "node-sass -w ./dev/styles/style.scss ./bones-master/library/css/tum-style.css --output-style=expanded",
+    "serve": "browser-sync start --server --files ./dev/**.html, ./dev/**.css, ./dev/**.js",
+    "watch": "yarn run sass | yarn watchify"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babelify": "7.3.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "14.4.0",
+    "envify": "4.0.0",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "15.0.1",
+    "eslint-plugin-import": "2.5.0",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-react": "7.1.0",
+    "eslint-watch": "3.1.0",
+    "node-sass": "^4.5.3",
+    "uglify-js": "3.0.15",
+    "watchify": "3.9.0"
+  }
+}
